@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Movie Night</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Family Movie Night</h1>
+            <p class="subtitle">Pick your next adventure!</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="pick">Pick a Movie</button>
+            <button class="tab-btn" data-tab="all">All Movies</button>
+            <button class="tab-btn" data-tab="history">History</button>
+        </nav>
+
+        <main>
+            <!-- PICK A MOVIE TAB -->
+            <div id="tab-pick" class="tab-content active">
+                <section id="movie-selection" class="section">
+                    <div class="section-header">
+                        <h2>Tonight's Choices</h2>
+                        <button id="new-selection-btn" class="btn btn-primary">Get New Movies</button>
+                    </div>
+                    <div id="movies-grid" class="movies-grid"></div>
+                </section>
+
+                <section id="voting-section" class="section hidden">
+                    <h2>Vote for Your Favorite!</h2>
+                    <p class="voting-instructions">Each person ranks the movies from 1 (best) to 6 (least preferred)</p>
+
+                    <div class="voters-container">
+                        <div class="voter" data-voter="1">
+                            <h3>Voter 1</h3>
+                            <div class="rank-inputs"></div>
+                        </div>
+                        <div class="voter" data-voter="2">
+                            <h3>Voter 2</h3>
+                            <div class="rank-inputs"></div>
+                        </div>
+                        <div class="voter" data-voter="3">
+                            <h3>Voter 3</h3>
+                            <div class="rank-inputs"></div>
+                        </div>
+                        <div class="voter" data-voter="4">
+                            <h3>Voter 4</h3>
+                            <div class="rank-inputs"></div>
+                        </div>
+                    </div>
+
+                    <button id="calculate-winner-btn" class="btn btn-success">Find the Winner!</button>
+                    <div id="winner-display" class="winner-display hidden"></div>
+                </section>
+            </div>
+
+            <!-- ALL MOVIES TAB -->
+            <div id="tab-all" class="tab-content">
+                <section class="section">
+                    <div class="section-header">
+                        <h2>All Movies</h2>
+                        <div class="filter-controls">
+                            <input type="text" id="search-input" placeholder="Search movies..." class="search-input">
+                            <select id="genre-filter" class="genre-filter">
+                                <option value="">All Genres</option>
+                            </select>
+                            <select id="status-filter" class="status-filter">
+                                <option value="">All Status</option>
+                                <option value="available">Available</option>
+                                <option value="watched">Watched</option>
+                                <option value="removed">Removed</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="all-movies-list" class="all-movies-list"></div>
+                </section>
+            </div>
+
+            <!-- HISTORY TAB -->
+            <div id="tab-history" class="tab-content">
+                <section id="watched-section" class="section">
+                    <h2>Movies We've Watched</h2>
+                    <div id="watched-list" class="watched-list"></div>
+                </section>
+
+                <section id="removed-section" class="section">
+                    <h2>Removed Movies</h2>
+                    <div id="removed-list" class="removed-list"></div>
+                </section>
+            </div>
+        </main>
+
+        <div id="trailer-modal" class="modal hidden">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <div id="trailer-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="movies.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

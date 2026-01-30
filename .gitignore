@@ -1,0 +1,4 @@
+node_modules/
+movies.db
+.env
+.DS_Store
